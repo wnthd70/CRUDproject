@@ -52,3 +52,12 @@ function Delete(){ // 회원 삭제 함수
 function Update(){ //비밀번호 수정 함수
 
 }
+
+function Search(){ // 회원 검색 함수
+  idSearch=prompt("검색할 회원 아이디를 입력하세요.");
+  if(memberId.indexOf(idSearch)!=-1){ // 입력한 아이디가 존재할 경우
+    alert('ID: '+idSearch+' Password: '+memberPw[memberId.indexOf(idSearch)]);
+  }else{
+    alert('해당 회원은 존재하지 않습니다.'); // 입력한 아이디가 존재하지 않을 경우
+  }
+}
