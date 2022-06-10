@@ -45,13 +45,14 @@ function Delete(){ // 회원 삭제 함수
     document.getElementById("memberTable").deleteRow(memberId.indexOf(memberDelete)+1); // 행 삭제
     memberId.splice(deleteIndex,1); // memberId 배열에서 아이디 삭제
     memberPw.splice(deleteIndex,1); // memberPw 배열에서 비밀번호 삭제
+    memberName.splice(deleteIndex,1); //memberName 배열에서 이름 삭제
     count--; // 카운트 1 감소
   }else{
     alert('존재하지 않는 회원 입니다.'); //삭제할 아이디가 배열에 없는 경우
   }
 }
 
-function Update(){ //비밀번호 수정 함수
+function Update(){ //회원 수정 함수
 
 }
 
