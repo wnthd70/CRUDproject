@@ -1,6 +1,7 @@
 var htmlList = document.getElementById('memberTable'); // 동적으로 변경해줄 테이블 지정
 var memberId = []; // 회원 아이디를 관리할 배열    => 아이디와 비밀번호는 index 번호로 매칭
 var memberPw = []; // 회원 비밀번호를 관리할 배열
+var memberName = []; //회원 이름을 관리할 배열
 var overlapCheck = false; // 중복확인을 위한 변수
 count=0; // 카운트 0으로 초기화, 회원 수를 확인하기 위함
 
@@ -8,8 +9,9 @@ function Join(){  // 회원가입 함수
   if(overlapCheck==true){ // 중복확인을 했는지 판별
     memberId.push(document.getElementById('id').value); // memberId 배열에 아이디 push
     memberPw.push(document.getElementById('pw').value); // memberPw 배열에 비밀번호 push
+    memberName.push(document.getElementById('name').value); // memberName 배열에 이름 push
     alert('회원가입 성공');
-    htmlList.innerHTML+="<tr><td>"+memberId[count]+"</td></tr>"; // 회원목록에 행 추가하여 작성
+    htmlList.innerHTML+="<tr><td>"+memberName[count]+"</td></tr>"; // 회원목록에 행 추가하여 작성
     overlapCheck=false; // 가입이 끝났으므로 다시 중복확인 변수를 false로 돌림
     count++; // 회원 수가 1명 늘어났으므로 카운트 1 증가
   }else{
@@ -54,10 +56,10 @@ function Update(){ //비밀번호 수정 함수
 }
 
 function Search(){ // 회원 검색 함수
-  idSearch=prompt("검색할 회원 아이디를 입력하세요.");
-  if(memberId.indexOf(idSearch)!=-1){ // 입력한 아이디가 존재할 경우
-    alert('ID: '+idSearch+' Password: '+memberPw[memberId.indexOf(idSearch)]);
+  idSearch=prompt("회원 이름을 입력하세요.");
+  if(memberName.indexOf(idSearch)!=-1){ // 입력한 이름이 존재할 경우
+    alert('ID: '+memberId[memberName.indexOf(idSearch)]+' Password: '+memberPw[memberName.indexOf(idSearch)]);
   }else{
-    alert('해당 회원은 존재하지 않습니다.'); // 입력한 아이디가 존재하지 않을 경우
+    alert('해당 회원은 존재하지 않습니다.'); // 입력한 이름이 존재하지 않을 경우
   }
 }
