@@ -47,6 +47,7 @@ function Update(){ //회원 수정 함수
   memberChoice=prompt('수정할 회원의 아이디를 입력하세요.');
   pwUpdate=prompt('변경할 비밀번호를 입력하세요.');
   memberPw.splice(memberId.indexOf(memberChoice), 1, pwUpdate);
+  alert('변경된 비밀번호 : '+memberPw[memberId.indexOf(memberChoice)]);
 }
 
 function Retrieve(){ // 회원 검색 함수
