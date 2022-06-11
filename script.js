@@ -29,15 +29,6 @@ function Overlap(){ // 중복확인 함수
   }
 }
 
-function Read(){ // 비밀번호 찾기 함수
-  pwRead=prompt("비밀번호를 찾을 아이디를 입력하세요.");
-  if(memberId.indexOf(pwRead)!=-1){ // 비밀번호를 찾을 아이디가 존재할 경우
-    alert(pwRead+'님의 비밀번호는 '+memberPw[memberId.indexOf(pwRead)]+' 입니다.');
-  }else{
-    alert('존재하지 않는 아이디 입니다.'); // 비밀번호를 찾을 아이디가 존재하지 않을 경우
-  }
-}
-
 function Delete(){ // 회원 삭제 함수
   memberDelete=prompt('삭제할 회원의 아이디를 입력하세요.');
   if(memberId.indexOf(memberDelete)!=-1){ // 삭제할 아이디가 배열에 있는지 판별
@@ -58,7 +49,7 @@ function Update(){ //회원 수정 함수
   memberPw.splice(memberId.indexOf(memberChoice), 1, pwUpdate);
 }
 
-function Search(){ // 회원 검색 함수
+function Retrieve(){ // 회원 검색 함수
   idSearch=prompt("회원 이름을 입력하세요.");
   if(memberName.indexOf(idSearch)!=-1){ // 입력한 이름이 존재할 경우
     alert('ID: '+memberId[memberName.indexOf(idSearch)]+' Password: '+memberPw[memberName.indexOf(idSearch)]);
